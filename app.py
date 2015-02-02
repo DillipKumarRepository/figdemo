@@ -7,7 +7,7 @@ redis = Redis(host="redis_1", port=6379)
 @app.route('/')
 def hello():
     redis.incr('hits')
-    return 'How deploy image in multiple server by using fig! I have been seen %s times.' % redis.get('hits')
+    return '<h1>Code deployment by using fig! I have been seen %s times.</h1>' % redis.get('hits')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
